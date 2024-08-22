@@ -8,7 +8,7 @@ public class DatabaseConnection {
 
     private static final String URL = "jdbc:postgresql://localhost:5432/ccc_camisetas";
     private static final String USER = "postgres";
-    private static final String PASSWORD = "camisasccc";
+    private static final String PASSWORD = "sua_senha"; //mudar a senha de acordo com a do servidor
 
     private static Connection connection = null;
 
