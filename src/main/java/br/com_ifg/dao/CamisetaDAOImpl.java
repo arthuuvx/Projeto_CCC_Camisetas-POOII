@@ -15,7 +15,7 @@ public class CamisetaDAOImpl implements CamisetaDAO {
 
     @Override
     public void save(Camiseta camiseta) {
-        String sql = "INSERT INTO Camiseta (idCamiseta, modelo, tamanho, cor, preco) VALUES (?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO Camiseta (id_camiseta, modelo, tamanho, cor, preco) VALUES (?, ?, ?, ?, ?)";
         try (PreparedStatement stmt = connection.prepareStatement(sql)) {
             stmt.setString(1, camiseta.getIdCamiseta());
             stmt.setString(2, camiseta.getModelo());
@@ -31,13 +31,13 @@ public class CamisetaDAOImpl implements CamisetaDAO {
 
     @Override
     public Camiseta findByID(String id) {
-        String sql = "SELECT * FROM Camiseta WHERE idCamiseta = ?";
+        String sql = "SELECT * FROM Camiseta WHERE id_camiseta = ?";
         try (PreparedStatement stmt = connection.prepareStatement(sql)) {
             stmt.setString(1, id);
             ResultSet rs = stmt.executeQuery();
             if (rs.next()) {
                 return new Camiseta(
-                        rs.getString("idCamiseta"),
+                        rs.getString("id_camiseta"),
                         rs.getString("modelo"),
                         rs.getString("tamanho"),
                         rs.getString("cor"),
@@ -59,7 +59,7 @@ public class CamisetaDAOImpl implements CamisetaDAO {
              ResultSet rs = stmt.executeQuery(sql)) {
             while (rs.next()) {
                 camisetas.add(new Camiseta(
-                        rs.getString("idCamiseta"),
+                        rs.getString("id_camiseta"),
                         rs.getString("modelo"),
                         rs.getString("tamanho"),
                         rs.getString("cor"),
@@ -75,7 +75,7 @@ public class CamisetaDAOImpl implements CamisetaDAO {
 
     @Override
     public void update(Camiseta camiseta) {
-        String sql = "UPDATE Camiseta SET modelo = ?, tamanho = ?, cor = ?, preco = ? WHERE idCamiseta = ?";
+        String sql = "UPDATE Camiseta SET modelo = ?, tamanho = ?, cor = ?, preco = ? WHERE id_camiseta = ?";
         try (PreparedStatement stmt = connection.prepareStatement(sql)) {
             stmt.setString(1, camiseta.getModelo());
             stmt.setString(2, camiseta.getTamanho());
@@ -91,7 +91,7 @@ public class CamisetaDAOImpl implements CamisetaDAO {
 
     @Override
     public void delete(String id) {
-        String sql = "DELETE FROM Camiseta WHERE idCamiseta = ?";
+        String sql = "DELETE FROM Camiseta WHERE id_camiseta = ?";
         try (PreparedStatement stmt = connection.prepareStatement(sql)) {
             stmt.setString(1, id);
             stmt.executeUpdate();

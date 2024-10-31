@@ -1,14 +1,14 @@
 package br.com_ifg.model;
 
 public class Camiseta {
-    private String idCamiseta;
+    private String id_camiseta;
     private String modelo;
     private String tamanho;
     private String cor;
     private double preco;
 
-    public Camiseta(String idCamiseta, String modelo, String tamanho, String cor, double preco) {
-        this.idCamiseta = idCamiseta;
+    public Camiseta(String id_camiseta, String modelo, String tamanho, String cor, double preco) {
+        this.id_camiseta = id_camiseta;
         this.modelo = modelo;
         this.tamanho = tamanho;
         this.cor = cor;
@@ -16,11 +16,11 @@ public class Camiseta {
     }
 
     public String getIdCamiseta() {
-        return idCamiseta;
+        return id_camiseta;
     }
 
-    public void setIdCamiseta(String idCamiseta) {
-        this.idCamiseta = idCamiseta;
+    public void setIdCamiseta(String id_camiseta) {
+        this.id_camiseta = id_camiseta;
     }
 
     public String getModelo() {
@@ -57,6 +57,6 @@ public class Camiseta {
 
     @Override
     public String toString() {
-        return "Camiseta{ID Camiseta='" + idCamiseta + "', Modelo='" + modelo + "', Tamanho='" + tamanho + "', Cor='" + cor + "', Preço=" + preco + "}";
+        return "Camiseta{ID Camiseta='" + id_camiseta + "', Modelo='" + modelo + "', Tamanho='" + tamanho + "', Cor='" + cor + "', Preço=" + preco + "}";
     }
 }
