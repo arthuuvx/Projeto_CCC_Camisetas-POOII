@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Camiseta</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .container {
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+        }
+        .container label {
+            display: block;
+            margin: 8px 0 4px;
+        }
+        .container input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .container button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Cadastro de Camiseta</h2>
+    <form id="camisetaForm">
+        <label for="idCamiseta">ID Camiseta:</label>
+        <input type="text" id="idCamiseta" name="idCamiseta" required>
+
+        <label for="modelo">Modelo:</label>
+        <input type="text" id="modelo" name="modelo" required>
+
+        <label for="tamanho">Tamanho:</label>
+        <input type="text" id="tamanho" name="tamanho" required>
+
+        <label for="cor">Cor:</label>
+        <input type="text" id="cor" name="cor" required>
+
+        <label for="preco">Preço:</label>
+        <input type="number" id="preco" name="preco" step="0.01" required>
+
+        <button type="submit">Salvar Camiseta</button>
+    </form>
+</div>
+
+<script>
+    document.getElementById("camisetaForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const camiseta = {
+            idCamiseta: document.getElementById("idCamiseta").value,
+            modelo: document.getElementById("modelo").value,
+            tamanho: document.getElementById("tamanho").value,
+            cor: document.getElementById("cor").value,
+            preco: parseFloat(document.getElementById("preco").value),
+        };
+
+        console.log("Camiseta salva:", camiseta);
+        alert("Camiseta cadastrada com sucesso!");
+
+        document.getElementById("camisetaForm").reset();
+    });
+</script>
+</body>
+</html>
