@@ -1,0 +1,115 @@
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo e Layout */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background: #f0f0f0;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Cabeçalho */
+header {
+    background: #28a745;
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.8rem 1.4rem;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.3s;
+}
+
+header nav ul li a:hover {
+    background: #218838;
+    transform: scale(1.1);
+}
+
+/* Seções */
+.section {
+    background: #fff;
+    margin: 3rem 0;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* Botões */
+button {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 0.7rem 2rem;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+    display: block;
+    margin: 1.5rem auto;
+}
+
+button:hover {
+    background: #218838;
+    transform: scale(1.05);
+}
+
+/* Lista de Itens */
+#produtos-lista, #estoque-lista, #fornecedores-lista, #clientes-lista, #compras-lista, #vendas-lista, #producao-lista, #relacao-produto-insumo {
+    padding: 1.5rem;
+    margin-top: 2rem;
+    background: #f9f9f9;
+    border-radius: 5px;
+}
+
+#produtos-lista div, #estoque-lista div, #fornecedores-lista div, #clientes-lista div, #compras-lista div, #vendas-lista div, #producao-lista div, #relacao-produto-insumo div {
+    padding: 1rem;
+    background: #fff;
+    margin-bottom: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 3rem;
+}

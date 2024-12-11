@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja de Camisetas - PooII</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Loja de Camisetas - Sistema de Gestão</h1>
+            <nav>
+                <ul>
+                    <li><a href="#produtos">Produtos</a></li>
+                    <li><a href="#estoque">Estoque</a></li>
+                    <li><a href="#fornecedores">Fornecedores</a></li>
+                    <li><a href="#clientes">Clientes</a></li>
+                    <li><a href="#compras">Compras</a></li>
+                    <li><a href="#vendas">Vendas</a></li>
+                    <li><a href="#producao">Produção</a></li>
+                    <li><a href="#relacao">Relacionamento</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Produtos -->
+        <section id="produtos" class="section">
+            <h2>Produtos</h2>
+            <button onclick="adicionarProduto()">Adicionar Produto</button>
+            <div id="produtos-lista"></div>
+        </section>
+
+        <!-- Estoque -->
+        <section id="estoque" class="section">
+            <h2>Estoque</h2>
+            <button onclick="adicionarEstoque()">Adicionar ao Estoque</button>
+            <div id="estoque-lista"></div>
+        </section>
+
+        <!-- Fornecedores -->
+        <section id="fornecedores" class="section">
+            <h2>Fornecedores</h2>
+            <button onclick="adicionarFornecedor()">Adicionar Fornecedor</button>
+            <div id="fornecedores-lista"></div>
+        </section>
+
+        <!-- Clientes -->
+        <section id="clientes" class="section">
+            <h2>Clientes</h2>
+            <button onclick="adicionarCliente()">Adicionar Cliente</button>
+            <div id="clientes-lista"></div>
+        </section>
+
+        <!-- Compras -->
+        <section id="compras" class="section">
+            <h2>Controle de Compras</h2>
+            <button onclick="adicionarCompra()">Registrar Compra</button>
+            <div id="compras-lista"></div>
+        </section>
+
+        <!-- Vendas -->
+        <section id="vendas" class="section">
+            <h2>Controle de Vendas</h2>
+            <button onclick="adicionarVenda()">Registrar Venda</button>
+            <div id="vendas-lista"></div>
+        </section>
+
+        <!-- Produção -->
+        <section id="producao" class="section">
+            <h2>Controle de Produção</h2>
+            <button onclick="adicionarProducao()">Registrar Produção</button>
+            <div id="producao-lista"></div>
+        </section>
+
+        <!-- Relacionamento Produto - Insumo -->
+        <section id="relacao" class="section">
+            <h2>Relacionamento Produto - Insumo</h2>
+            <button onclick="adicionarRelacaoProdutoInsumo()">Adicionar Relacionamento</button>
+            <div id="relacao-produto-insumo"></div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Loja de Camisetas - PooII</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
