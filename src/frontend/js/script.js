@@ -1,90 +1,54 @@
-let produtos = [];
-let estoque = [];
-let fornecedores = [];
-let clientes = [];
-
-// Funções de Modal
+// Função para abrir o modal
 function abrirModal(secao) {
-    const modal = document.getElementById(`${secao}-modal`);
+    const modal = document.getElementById('modal');
+    const modalBody = document.getElementById('modal-body');
+
+    // Define o conteúdo com base na seção
+    let conteudo = '';
+    switch (secao) {
+        case 'produtos':
+            conteudo = '<h2>Produtos</h2><p>Gerencie seus produtos aqui.</p>';
+            break;
+        case 'estoque':
+            conteudo = '<h2>Estoque</h2><p>Controle seu estoque de forma eficiente.</p>';
+            break;
+        case 'fornecedores':
+            conteudo = '<h2>Fornecedores</h2><p>Adicione ou remova fornecedores.</p>';
+            break;
+        case 'clientes':
+            conteudo = '<h2>Clientes</h2><p>Mantenha um registro de seus clientes.</p>';
+            break;
+        case 'compras':
+            conteudo = '<h2>Compras</h2><p>Registre as compras realizadas.</p>';
+            break;
+        case 'vendas':
+            conteudo = '<h2>Vendas</h2><p>Acompanhe suas vendas.</p>';
+            break;
+        case 'producao':
+            conteudo = '<h2>Produção</h2><p>Gerencie a produção de produtos.</p>';
+            break;
+        case 'relacao':
+            conteudo = '<h2>Relacionamento</h2><p>Relacionamento entre produtos e insumos.</p>';
+            break;
+        default:
+            conteudo = '<p>Seção não encontrada.</p>';
+    }
+
+    // Adiciona o conteúdo ao modal e exibe
+    modalBody.innerHTML = conteudo;
     modal.style.display = 'block';
 }
 
-function fecharModal(secao) {
-    const modal = document.getElementById(`${secao}-modal`);
+// Função para fechar o modal
+function fecharModal() {
+    const modal = document.getElementById('modal');
     modal.style.display = 'none';
 }
 
-// Função Genérica para Adicionar e Validar
-function obterEntradaValida(mensagem, tipo) {
-    let valor;
-    do {
-        valor = prompt(mensagem);
-        if (tipo === 'numero') valor = parseFloat(valor);
-    } while (!valor || (tipo === 'numero' && isNaN(valor)));
-    return valor;
-}
-
-function adicionarProduto() {
-    const nome = obterEntradaValida("Nome do Produto:", "texto");
-    const preco = obterEntradaValida("Preço do Produto:", "numero");
-    produtos.push({ nome, preco });
-    exibirProdutos();
-}
-
-function exibirProdutos() {
-    const container = document.querySelector('#produtos-lista');
-    container.innerHTML = '';
-    produtos.forEach((produto) => {
-        container.innerHTML += `<li>Produto: ${produto.nome} | Preço: R$ ${produto.preco}</li>`;
-    });
-}
-
-function adicionarEstoque() {
-    const produto = obterEntradaValida("Nome do Produto para adicionar ao Estoque:", "texto");
-    const quantidade = obterEntradaValida("Quantidade:", "numero");
-    estoque.push({ produto, quantidade });
-    exibirEstoque();
-}
-
-function exibirEstoque() {
-    const container = document.querySelector('#estoque-lista');
-    container.innerHTML = '';
-    estoque.forEach((item) => {
-        container.innerHTML += `<li>${item.produto} - Quantidade: ${item.quantidade}</li>`;
-    });
-}
-
-function adicionarFornecedor() {
-    const nome = obterEntradaValida("Nome do Fornecedor:", "texto");
-    fornecedores.push({ nome });
-    exibirFornecedores();
-}
-
-function exibirFornecedores() {
-    const container = document.querySelector('#fornecedores-lista');
-    container.innerHTML = '';
-    fornecedores.forEach((fornecedor) => {
-        container.innerHTML += `<li>Fornecedor: ${fornecedor.nome}</li>`;
-    });
-}
-
-function adicionarCliente() {
-    const nome = obterEntradaValida("Nome do Cliente:", "texto");
-    clientes.push({ nome });
-    exibirClientes();
-}
-
-function exibirClientes() {
-    const container = document.querySelector('#clientes-lista');
-    container.innerHTML = '';
-    clientes.forEach((cliente) => {
-        container.innerHTML += `<li>Cliente: ${cliente.nome}</li>`;
-    });
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-    exibirProdutos();
-    exibirEstoque();
-    exibirFornecedores();
-    exibirClientes();
-});
+// Fecha o modal ao clicar fora dele
+window.onclick = function (event) {
+    const modal = document.getElementById('modal');
+    if (event.target === modal) {
+        fecharModal();
+    }
+};

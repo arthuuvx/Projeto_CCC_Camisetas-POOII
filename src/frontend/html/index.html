@@ -15,49 +15,41 @@
         <h1>Loja de Camisetas - Sistema de Gestão</h1>
         <nav>
             <ul>
-                <li><a href="#produtos">Produtos</a></li>
-                <li><a href="#estoque">Estoque</a></li>
-                <li><a href="#fornecedores">Fornecedores</a></li>
-                <li><a href="#clientes">Clientes</a></li>
-                <li><a href="#compras">Compras</a></li>
-                <li><a href="#vendas">Vendas</a></li>
-                <li><a href="#producao">Produção</a></li>
-                <li><a href="#relacao">Relacionamento</a></li>
+                <li><a href="#produtos" onclick="abrirModal('produtos')">Produtos</a></li>
+                <li><a href="#estoque" onclick="abrirModal('estoque')">Estoque</a></li>
+                <li><a href="#fornecedores" onclick="abrirModal('fornecedores')">Fornecedores</a></li>
+                <li><a href="#clientes" onclick="abrirModal('clientes')">Clientes</a></li>
+                <li><a href="#compras" onclick="abrirModal('compras')">Compras</a></li>
+                <li><a href="#vendas" onclick="abrirModal('vendas')">Vendas</a></li>
+                <li><a href="#producao" onclick="abrirModal('producao')">Produção</a></li>
+                <li><a href="#relacao" onclick="abrirModal('relacao')">Relacionamento</a></li>
             </ul>
         </nav>
     </div>
 </header>
 
-<div class="content">
-    <h2>Bem-vindo à Loja de Camisetas</h2>
-    <p>Gerencie seus produtos, estoques, fornecedores e muito mais!</p>
-    <button onclick="abrirModal()">Abrir Janela</button>
-</div>
-
-<div class="modal" id="modal">
-    <div class="modal-content">
-        <h3>Janela Modal</h3>
-        <p>Este é um exemplo de janela que aparece na frente do conteúdo principal.</p>
-        <button class="close-btn" onclick="fecharModal()">Fechar</button>
+<main>
+    <div class="container-conteudo">
+        <p>Bem-vindo à Loja de Camisetas - Sistema de Gestão.</p>
+        <p>Clique em um dos menus acima para abrir a seção correspondente.</p>
     </div>
-</div>
+</main>
 
 <footer>
     <p>&copy; 2024 Loja de Camisetas - PooII</p>
 </footer>
 
+<!-- Janela Modal -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="fecharModal()">&times;</span>
+        <div id="modal-body">
+            <!-- Conteúdo da seção será carregado aqui -->
+        </div>
+    </div>
+</div>
+
 <script src="../js/script.js"></script>
-<script>
-    function abrirModal() {
-        document.getElementById('modal').style.display = 'flex';
-    }
-
-    function fecharModal() {
-        document.getElementById('modal').style.display = 'none';
-    }
-</script>
-
 </body>
-<!--agora em vez de ter o botão de abrir janela eu quero que mantenha oque esta porem ao clicar por exemplo em produto abra uma janela na frente porem mantendo a estrutura da pagina!-->
-</html>
 
+</html>
